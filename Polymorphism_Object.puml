@@ -1,30 +1,26 @@
 @startuml
 
-object Ship
-object CruiseShip
-object CargoShip
-
+object "<u>ships[0]:Ship</u>" as ogS{
+    name = "Ship1"
+    yearBuilt = "2000"
+    maxPassangers = 1000
+}
+object "<u>ships[1]:CruiseShip</u>" as crS{
+    name = "CruiseShip1"
+    yearBuilt = "2010"
+    maxPassangers = 500
+}
+object "<u>ships[2]:CargoShip</u>" as carS{
+    name = "CargoShip1"
+    yearBuilt = "2020"
+    maxPassangers = 10000
+}
 map ships {
     0 => Ship
     1 => CruiseShip
     2 => CargoShip
 }
-object Ship {
-    name = "Ship1"
-    yearBuilt = "2000"
-    maxPassangers = 1000
-}
-object CruiseShip {
-    name = "CruiseShip1"
-    yearBuilt = "2010"
-    maxPassangers = 500
-}
-object CargoShip {
-    name = "CargoShip1"
-    yearBuilt = "2020"
-    maxPassangers = 10000
-}
-Ship --> ships::0
-CruiseShip --> ships::1
-CargoShip --> ships::2
+ogS --> ships::0
+crS --> ships::1
+carS --> ships::2
 @enduml
