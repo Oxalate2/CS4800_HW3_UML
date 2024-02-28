@@ -1,0 +1,64 @@
+@startuml
+
+Employee <|-- BaseEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- SalariedEmployee
+Driver -- Employee
+
+class Driver {
+    +static void main (String[] args)
+}
+
+abstract class Employee {
+    -firstName: String
+    -lastName: String
+    -ssn: String
+
+    +Employee(firstName: String, lastName: String, ssn: String)
+    +getFirstName(): String
+    +getLastName(): String
+    +getSsn(): String
+    +setFirstName(firstName: String): void
+    +setLastName(lastName: String): String
+    +setSsn(ssn: String): void
+}
+
+class BaseEmployee {
+    -baseSalary: double
+    +BaseEmployee(firstName: String, lastName: String, ssn: String, baseSalary: double)
+    +getBaseSalary(): double
+    +setBaseSalary(baseSalary: double): void
+}
+
+class CommissionEmployee {
+    -commissionRate: double
+    -grossSales: double
+
+    +CommissionEmployee(firstName: String, lastName: String, ssn: String, commissionRate: double, grossSales: double)
+    +getCommissionRate(): double
+    +getGrossSales(): double
+    +setCommissionRate(commissionRate: double): void
+    +setGrossSales(grossSales: double): void
+}
+
+class HourlyEmployee {
+    -wage: double
+    -hoursWorked: int
+
+    +HourlyEmployee(firstName: String, lastName: String, ssn: String, wage: double, hoursWorked: int)
+    +getWage(): double
+    +getHoursWorked(): int
+    +setWage(wage: double): void
+    +setHoursWorked(hoursWorked: int): void
+}
+
+class SalariedEmployee {
+    -weeklySalary: double
+    +SalariedEmployee(firstName: String, lastName: String, ssn: String, weeklySalary: double)
+    +getWeeklySalary(): double
+    +setWeeklySalary(weeklySalary: double): void
+}
+
+@enduml
+

@@ -1,0 +1,26 @@
+@startuml
+
+Folder *- File
+Main -- Folder
+
+class File {
+    -name: String
+    +File(name: String)
+    +printFileName(): void
+}
+
+class Folder {
+    -name: String
+    -subFolders: List<Folder>
+    -files: List<File>
+    +Folder(name: String)
+    +addFolder(folder: Folder): void
+    +addFile(file: File): void
+    +printFolderContents: void
+    +deleteFolder(folderName: String): void
+}
+
+class Main {
+    +static void main(String[] args)
+}
+@enduml
