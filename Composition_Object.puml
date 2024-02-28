@@ -1,29 +1,35 @@
 @startuml
 
-object php_demo1
-object source_files
-object cache
-object public_folder
-object phalcon
-object htaccess
-object htrouter
-object index
-
-php_demo1 : name = "php_demo1"
-source_files : name = "Source Files"
-cache : name = "cache"
-public_folder : name = "public"
-phalcon : name = ".phalcon"
-htaccess : name = ".htaccess"
-htrouter : name = ".htrouter.php"
-index : name = "index.html"
-
-php_demo1 *-- source_files
-source_files *-- phalcon
-source_files *-- cache
-source_files *-- public_folder
-source_files *-- htaccess
-source_files *-- htrouter
-source_files *-- index
+object "<u>php_demo1:Folder</u>" as demo1 {
+    name = "php_demo1"
+}
+object "<u>source_files:Folder</u>" as src {
+    name = "Source Files"
+}
+object "<u>cache:Folder</u>" as cache {
+    name = "cache"
+}
+object "<u>public_folder:Folder</u>" as public {
+    name = "public"
+}
+object "<u>phalcon:Folder</u>" as phal {
+    name = ".phalcon"
+}
+object "<u>htaccess:File</u>" as htac {
+    name = ".htaccess"
+}
+object "<u>htrouter:File</u>" as htr {
+    name = ".htrouter.php"
+}
+object "<u>index:File</u>" as idx {
+    name = "index.html"
+}
+demo1 *-- src
+src *-- phal
+src *-- cache
+src *-- public
+src *-- htac
+src *-- htr
+src *-- idx
 
 @enduml
