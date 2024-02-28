@@ -1,0 +1,29 @@
+@startuml
+
+object php_demo1
+object source_files
+object cache
+object public_folder
+object phalcon
+object htaccess
+object htrouter
+object index
+
+php_demo1 : name = "php_demo1"
+source_files : name = "Source Files"
+cache : name = "cache"
+public_folder : name = "public"
+phalcon : name = ".phalcon"
+htaccess : name = ".htaccess"
+htrouter : name = ".htrouter.php"
+index : name = "index.html"
+
+php_demo1 *-- source_files
+source_files *-- phalcon
+source_files *-- cache
+source_files *-- public_folder
+source_files *-- htaccess
+source_files *-- htrouter
+source_files *-- index
+
+@enduml

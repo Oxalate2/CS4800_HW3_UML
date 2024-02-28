@@ -1,0 +1,47 @@
+@startuml
+
+object instructor1
+object instructor2
+object textbook1
+object textbook2
+object course1
+object course2
+
+object instructor1 {
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object instructor2 {
+    firstName = "John"
+    lastName = "Doe"
+    officeNumber = "3-2637"
+}
+
+object textbook1 {
+    title = "Clean Code"
+    author = "Robert C. Martin"
+    publisher = "Pearson"
+}
+
+object textbook2 {
+    title = "Effective Java"
+    author = "Joshua Bloch"
+    publisher = "Addison-Wesley"
+}
+
+object course1 {
+    courseName = "Software Engineering"
+}
+
+object course2 {
+    courseName = "Data Structures"
+}
+
+course1 o-- instructor1
+course1 o-- textbook1
+course2 o-- instructor2
+course2 o-- textbook2
+
+@enduml
